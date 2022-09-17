@@ -1,0 +1,22 @@
+package com.jinnyjinnyjinjin.ecommerce.category.api.request;
+
+public class CategoryCreateRequest {
+
+    private String categoryName;
+
+    private String description;
+
+    private String imageUrl;
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+}
