@@ -1,11 +1,14 @@
 package com.jinnyjinnyjinjin.ecommerce.category.domain.entity;
 
 import lombok.Getter;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+
+import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -24,6 +27,9 @@ public class Category {
 
     @Column(name = "image_url")
     private String imageUrl;
+
+    @CreatedDate
+    private LocalDateTime createdAt;
 
     public Category() {
     }
