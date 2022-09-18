@@ -7,7 +7,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-
 import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.IDENTITY;
@@ -34,15 +33,18 @@ public class Category {
     public Category() {
     }
 
-    public Category(String name, String description) {
-        this.name = name;
-        this.description = description;
-    }
-
-    public Category(String name, String description, String imageUrl) {
+    private Category(String name,
+                    String description,
+                    String imageUrl) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
+    }
+
+    public static Category create(String name,
+                                  String description,
+                                  String imageUrl) {
+        return new Category(name, description, imageUrl);
     }
 
     public void update(String name, String description, String imageUrl) {

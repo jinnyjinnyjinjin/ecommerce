@@ -25,6 +25,7 @@ public class CategoryPersistence {
         return categoryRepository.findAll(pageable);
     }
 
+    @Transactional
     public void save(String name, String description, String imageUrl) {
         Category category = Category.create(name, description, imageUrl);
         categoryRepository.save(category);
