@@ -1,8 +1,7 @@
 package com.jinnyjinnyjinjin.ecommerce.category.service;
 
 import com.jinnyjinnyjinjin.ecommerce.category.domain.entity.Category;
-import com.jinnyjinnyjinjin.ecommerce.category.domain.repository.CategoryRepository;
-import com.jinnyjinnyjinjin.ecommerce.category.domain.service.CategoryReader;
+import com.jinnyjinnyjinjin.ecommerce.category.domain.service.CategoryPersistence;
 import com.jinnyjinnyjinjin.ecommerce.category.dto.CategoryDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -14,22 +13,20 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class CategoryService {
 
-    private final CategoryRepository categoryRepository;
-    private final CategoryReader categoryReader;
+    private final CategoryPersistence categoryPersistence;
 
     public void create(String categoryName, String description, String imageUrl) {
-        Category category = new Category(categoryName, description, imageUrl);
-        categoryRepository.save(category);
+        categoryPersistence.save(categoryName, description, imageUrl);
     }
 
     public Page<CategoryDto> getAll(Pageable pageable) {
-        return categoryRepository.findAll(pageable)
+        return categoryPersistence.findAll(pageable)
                 .map(CategoryDto::of);
     }
 
     @Transactional
     public void update(Long id, String name, String description, String imageUrl) {
-        Category category = categoryReader.findById(id);
+        Category category = categoryPersistence.findById(id);
         category.update(name, description, imageUrl);
     }
 }
