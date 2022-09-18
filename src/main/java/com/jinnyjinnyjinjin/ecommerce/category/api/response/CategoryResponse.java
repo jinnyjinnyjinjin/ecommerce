@@ -19,7 +19,7 @@ public class CategoryResponse {
     public static CategoryResponse of(CategoryDto dto) {
         return CategoryResponse.builder()
                 .id(dto.getId())
-                .categoryName(dto.getCategoryName())
+                .categoryName(dto.getName())
                 .imageUrl(dto.getImageUrl())
                 .createdAt(dto.getCreatedAt())
                 .build();

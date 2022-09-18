@@ -2,6 +2,7 @@ package com.jinnyjinnyjinjin.ecommerce.category.api;
 
 import com.jinnyjinnyjinjin.ecommerce.ApiResponse;
 import com.jinnyjinnyjinjin.ecommerce.category.api.request.CategoryCreateRequest;
+import com.jinnyjinnyjinjin.ecommerce.category.api.request.CategoryUpdateRequest;
 import com.jinnyjinnyjinjin.ecommerce.category.api.response.CategoryResponse;
 import com.jinnyjinnyjinjin.ecommerce.category.service.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -33,8 +34,24 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<Page<CategoryResponse>> findAllCategories(@PageableDefault Pageable pageable) {
+
         Page<CategoryResponse> categories = categoryService.getAll(pageable)
                 .map(CategoryResponse::of);
+
         return new ResponseEntity<>(categories, HttpStatus.OK);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ApiResponse> updateCategory(@PathVariable("id") Long id,
+                                                      @RequestBody CategoryUpdateRequest request) {
+
+        categoryService.update(
+                id,
+                request.getName(),
+                request.getDescription(),
+                request.getImageUrl()
+        );
+
+        return new ResponseEntity<>(new ApiResponse(true, "updated category"), HttpStatus.OK);
     }
 }

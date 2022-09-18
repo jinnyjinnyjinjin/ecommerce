@@ -44,4 +44,10 @@ public class Category {
         this.description = description;
         this.imageUrl = imageUrl;
     }
+
+    public void update(String name, String description, String imageUrl) {
+        this.name = name;
+        this.description = description;
+        this.imageUrl = imageUrl;
+    }
 }

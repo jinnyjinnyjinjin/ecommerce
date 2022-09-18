@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class CategoryDto {
 
     private Long id;
-    private String categoryName;
+    private String name;
     private String description;
     private String imageUrl;
     private LocalDateTime createdAt;
@@ -19,10 +19,9 @@ public class CategoryDto {
     public static CategoryDto of(Category category) {
         return CategoryDto.builder()
                 .id(category.getId())
-                .categoryName(category.getName())
+                .name(category.getName())
                 .imageUrl(category.getImageUrl())
                 .createdAt(category.getCreatedAt())
                 .build();
     }
-
 }
