@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce.app.category.api.v1.response;
+package com.jinnyjinnyjinjin.ecommerce.app.category.api.response;
 
 import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
 import lombok.Builder;
