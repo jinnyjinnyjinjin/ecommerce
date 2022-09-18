@@ -1,8 +1,8 @@
-package com.jinnyjinnyjinjin.ecommerce.category.service;
+package com.jinnyjinnyjinjin.ecommerce.app.category.service;
 
-import com.jinnyjinnyjinjin.ecommerce.category.domain.entity.Category;
-import com.jinnyjinnyjinjin.ecommerce.category.domain.service.CategoryPersistence;
-import com.jinnyjinnyjinjin.ecommerce.category.dto.CategoryDto;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
+import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.service.CategoryPersistence;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

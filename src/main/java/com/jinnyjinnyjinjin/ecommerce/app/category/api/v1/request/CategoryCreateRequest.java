@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce.category.api.request;
+package com.jinnyjinnyjinjin.ecommerce.app.category.api.v1.request;
 
 public class CategoryCreateRequest {
 

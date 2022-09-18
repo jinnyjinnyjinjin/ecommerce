@@ -1,10 +1,10 @@
-package com.jinnyjinnyjinjin.ecommerce.category.api;
+package com.jinnyjinnyjinjin.ecommerce.app.category.api.v1;
 
-import com.jinnyjinnyjinjin.ecommerce.ApiResponse;
-import com.jinnyjinnyjinjin.ecommerce.category.api.request.CategoryCreateRequest;
-import com.jinnyjinnyjinjin.ecommerce.category.api.request.CategoryUpdateRequest;
-import com.jinnyjinnyjinjin.ecommerce.category.api.response.CategoryResponse;
-import com.jinnyjinnyjinjin.ecommerce.category.service.CategoryService;
+import com.jinnyjinnyjinjin.ecommerce.app.category.api.ApiResponse;
+import com.jinnyjinnyjinjin.ecommerce.app.category.api.v1.request.CategoryCreateRequest;
+import com.jinnyjinnyjinjin.ecommerce.app.category.api.v1.request.CategoryUpdateRequest;
+import com.jinnyjinnyjinjin.ecommerce.app.category.api.v1.response.CategoryResponse;
+import com.jinnyjinnyjinjin.ecommerce.app.category.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

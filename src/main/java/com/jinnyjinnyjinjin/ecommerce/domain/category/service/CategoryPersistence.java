@@ -1,8 +1,8 @@
-package com.jinnyjinnyjinjin.ecommerce.category.domain.service;
+package com.jinnyjinnyjinjin.ecommerce.domain.category.service;
 
-import com.jinnyjinnyjinjin.ecommerce.category.domain.entity.Category;
-import com.jinnyjinnyjinjin.ecommerce.category.domain.exception.CategoryException;
-import com.jinnyjinnyjinjin.ecommerce.category.domain.repository.CategoryRepository;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.exception.CategoryNotFoundException;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -18,7 +18,7 @@ public class CategoryPersistence {
 
     public Category findById(Long id) {
         return categoryRepository.findById(id)
-                .orElseThrow(() -> new CategoryException("카테고리를 찾을 수 없습니다."));
+                .orElseThrow(() -> new CategoryNotFoundException("Category not found."));
     }
 
     public Page<Category> findAll(Pageable pageable) {

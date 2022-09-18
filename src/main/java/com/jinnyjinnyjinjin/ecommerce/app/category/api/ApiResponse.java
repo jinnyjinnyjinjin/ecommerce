@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce;
+package com.jinnyjinnyjinjin.ecommerce.app.category.api;
 
 import java.time.LocalDateTime;
 
