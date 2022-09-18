@@ -19,7 +19,7 @@ public class CategoryDto {
     public static CategoryDto of(Category category) {
         return CategoryDto.builder()
                 .id(category.getId())
-                .categoryName(category.getCategoryName())
+                .categoryName(category.getName())
                 .imageUrl(category.getImageUrl())
                 .createdAt(category.getCreatedAt())
                 .build();

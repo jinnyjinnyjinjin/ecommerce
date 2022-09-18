@@ -21,7 +21,7 @@ public class Category {
     private Long id;
 
     @Column(name = "category_name")
-    private String categoryName;
+    private String name;
 
     private String description;
 
@@ -34,13 +34,13 @@ public class Category {
     public Category() {
     }
 
-    public Category(String categoryName, String description) {
-        this.categoryName = categoryName;
+    public Category(String name, String description) {
+        this.name = name;
         this.description = description;
     }
 
-    public Category(String categoryName, String description, String imageUrl) {
-        this.categoryName = categoryName;
+    public Category(String name, String description, String imageUrl) {
+        this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
     }
