@@ -28,7 +28,7 @@ public class CategoryController {
                 request.getImageUrl()
         );
 
-        return new ResponseEntity<>(new ApiResponse(true, "created"), HttpStatus.CREATED);
+        return new ResponseEntity<>(new ApiResponse(true, "created category"), HttpStatus.CREATED);
     }
 
     @GetMapping

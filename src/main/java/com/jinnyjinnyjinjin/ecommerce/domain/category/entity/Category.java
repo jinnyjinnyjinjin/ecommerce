@@ -3,16 +3,14 @@ package com.jinnyjinnyjinjin.ecommerce.domain.category.entity;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Getter
+@Table(name = "categories")
 public class Category {
 
     @Id
