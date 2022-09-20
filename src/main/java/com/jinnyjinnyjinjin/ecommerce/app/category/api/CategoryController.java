@@ -23,7 +23,7 @@ public class CategoryController {
     public ResponseEntity<ApiResponse> createCategory(@RequestBody CategoryCreateRequest request) {
 
         categoryService.create(
-                request.getCategoryName(),
+                request.getName(),
                 request.getDescription(),
                 request.getImageUrl()
         );

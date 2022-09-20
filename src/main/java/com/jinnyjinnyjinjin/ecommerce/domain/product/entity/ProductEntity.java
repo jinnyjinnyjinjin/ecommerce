@@ -57,4 +57,16 @@ public class ProductEntity {
                 category
         );
     }
+
+    public void update(String name,
+                       String imageUrl,
+                       double price,
+                       String description,
+                       Category category) {
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.price = price;
+        this.description = description;
+        this.category = category;
+    }
 }

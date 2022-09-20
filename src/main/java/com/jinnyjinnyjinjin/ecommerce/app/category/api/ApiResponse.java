@@ -1,7 +1,10 @@
 package com.jinnyjinnyjinjin.ecommerce.app.category.api;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 public class ApiResponse {
 
     private final boolean success;
@@ -10,14 +13,6 @@ public class ApiResponse {
     public ApiResponse(boolean success, String message) {
         this.success = success;
         this.message = message;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public String getMessage() {
-        return message;
     }
 
     public String getTimestamp() {

@@ -1,7 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.category.entity;
 
 import lombok.Getter;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,7 +16,6 @@ public class Category {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
 
-    @Column(name = "category_name")
     private String name;
 
     private String description;
@@ -25,18 +23,19 @@ public class Category {
     @Column(name = "image_url")
     private String imageUrl;
 
-    @CreatedDate
+    @Column(nullable = false)
     private LocalDateTime createdAt;
 
     public Category() {
     }
 
     private Category(String name,
-                    String description,
-                    String imageUrl) {
+                     String description,
+                     String imageUrl) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
+        this.createdAt = LocalDateTime.now();
     }
 
     public static Category create(String name,
