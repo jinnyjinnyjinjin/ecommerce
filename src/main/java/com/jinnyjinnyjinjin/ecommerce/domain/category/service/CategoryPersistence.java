@@ -3,10 +3,10 @@ package com.jinnyjinnyjinjin.ecommerce.domain.category.service;
 import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Component
 @RequiredArgsConstructor
@@ -15,8 +15,8 @@ public class CategoryPersistence {
     private final CategoryReader categoryReader;
     private final CategoryWriter categoryWriter;
 
-    public Page<Category> findAll(Pageable pageable) {
-        return categoryReader.readAll(pageable);
+    public List<Category> findAll() {
+        return categoryReader.readAll();
     }
 
     public void save(String name, String description, String imageUrl) {

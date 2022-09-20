@@ -4,9 +4,9 @@ import com.jinnyjinnyjinjin.ecommerce.app.category.api.response.CategoryResponse
 import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.service.CategoryPersistence;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,10 +18,13 @@ public class CategoryService {
         categoryPersistence.save(categoryName, description, imageUrl);
     }
 
-    public Page<CategoryResponse> getAll(Pageable pageable) {
-        Page<CategoryDto> categoryDtos = categoryPersistence.findAll(pageable)
-                .map(CategoryDto::of);
-        return categoryDtos.map(CategoryResponse::of);
+    public List<CategoryResponse> getAll() {
+        List<CategoryDto> categoryDtos = categoryPersistence.findAll().stream()
+                .map(CategoryDto::of)
+                .toList();
+        return categoryDtos.stream()
+                .map(CategoryResponse::of)
+                .toList();
     }
 
     public void update(Long id, String name, String description, String imageUrl) {

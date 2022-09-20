@@ -5,12 +5,11 @@ import com.jinnyjinnyjinjin.ecommerce.app.category.api.request.CategoryUpdateReq
 import com.jinnyjinnyjinjin.ecommerce.app.category.api.response.CategoryResponse;
 import com.jinnyjinnyjinjin.ecommerce.app.category.service.CategoryService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -32,8 +31,8 @@ public class CategoryController {
     }
 
     @GetMapping
-    public ResponseEntity<Page<CategoryResponse>> findAllCategories(@PageableDefault Pageable pageable) {
-        Page<CategoryResponse> categories = categoryService.getAll(pageable);
+    public ResponseEntity<List<CategoryResponse>> findAllCategories() {
+        List<CategoryResponse> categories = categoryService.getAll();
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
