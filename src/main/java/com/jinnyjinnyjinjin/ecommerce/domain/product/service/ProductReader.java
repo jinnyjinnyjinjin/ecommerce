@@ -1,7 +1,7 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.product.service;
 
 import com.jinnyjinnyjinjin.ecommerce.domain.product.entity.ProductEntity;
-import com.jinnyjinnyjinjin.ecommerce.domain.product.exception.ProductNotFound;
+import com.jinnyjinnyjinjin.ecommerce.exception.product.ProductNotFound;
 import com.jinnyjinnyjinjin.ecommerce.domain.product.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -22,6 +22,6 @@ public class ProductReader {
 
     public ProductEntity findById(Long id) {
         return productRepository.findById(id)
-                .orElseThrow(() -> new ProductNotFound("상품을 찾을 수 없습니다."));
+                .orElseThrow(() -> new ProductNotFound("상품을 찾을 수 없습니다.", id));
     }
 }

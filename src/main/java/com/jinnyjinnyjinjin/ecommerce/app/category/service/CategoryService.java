@@ -1,5 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.app.category.service;
 
+import com.jinnyjinnyjinjin.ecommerce.app.category.api.response.CategoryResponse;
 import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.service.CategoryPersistence;
 import lombok.RequiredArgsConstructor;
@@ -17,12 +18,18 @@ public class CategoryService {
         categoryPersistence.save(categoryName, description, imageUrl);
     }
 
-    public Page<CategoryDto> getAll(Pageable pageable) {
-        return categoryPersistence.findAll(pageable)
+    public Page<CategoryResponse> getAll(Pageable pageable) {
+        Page<CategoryDto> categoryDtos = categoryPersistence.findAll(pageable)
                 .map(CategoryDto::of);
+        return categoryDtos.map(CategoryResponse::of);
     }
 
     public void update(Long id, String name, String description, String imageUrl) {
         categoryPersistence.update(id, name, description, imageUrl);
+    }
+
+    public CategoryResponse getOne(Long id) {
+        CategoryDto categoryDto = categoryPersistence.findById(id);
+        return CategoryResponse.of(categoryDto);
     }
 }

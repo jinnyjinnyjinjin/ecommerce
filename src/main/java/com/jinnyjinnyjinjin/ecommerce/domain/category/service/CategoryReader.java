@@ -1,7 +1,7 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.category.service;
 
 import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
-import com.jinnyjinnyjinjin.ecommerce.domain.category.exception.CategoryNotFoundException;
+import com.jinnyjinnyjinjin.ecommerce.exception.category.CategoryNotFoundException;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -18,7 +18,7 @@ public class CategoryReader {
 
     public Category read(Long id) {
         return categoryRepository.findById(id)
-                .orElseThrow(() -> new CategoryNotFoundException("카테고리를 찾을 수 없습니다."));
+                .orElseThrow(() -> new CategoryNotFoundException("카테고리를 찾을 수 없습니다.", id));
     }
 
     public Page<Category> readAll(Pageable pageable) {

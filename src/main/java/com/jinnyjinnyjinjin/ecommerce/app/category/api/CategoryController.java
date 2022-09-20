@@ -33,10 +33,7 @@ public class CategoryController {
 
     @GetMapping
     public ResponseEntity<Page<CategoryResponse>> findAllCategories(@PageableDefault Pageable pageable) {
-
-        Page<CategoryResponse> categories = categoryService.getAll(pageable)
-                .map(CategoryResponse::of);
-
+        Page<CategoryResponse> categories = categoryService.getAll(pageable);
         return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 
@@ -52,5 +49,11 @@ public class CategoryController {
         );
 
         return new ResponseEntity<>(new ApiResponse(true, "updated category"), HttpStatus.OK);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<CategoryResponse> findCategory(@PathVariable("id") Long id) {
+        CategoryResponse response = categoryService.getOne(id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

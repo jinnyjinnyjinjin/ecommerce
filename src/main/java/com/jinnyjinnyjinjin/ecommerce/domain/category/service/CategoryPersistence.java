@@ -1,5 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.category.service;
 
+import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -27,5 +28,10 @@ public class CategoryPersistence {
     public void update(Long id, String name, String description, String imageUrl) {
         Category category = categoryReader.read(id);
         category.update(name, description, imageUrl);
+    }
+
+    public CategoryDto findById(Long id) {
+        Category category = categoryReader.read(id);
+        return CategoryDto.of(category);
     }
 }
