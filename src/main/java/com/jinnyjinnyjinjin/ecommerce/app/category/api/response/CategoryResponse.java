@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class CategoryResponse {
 
     private Long id;
-    private String categoryName;
+    private String name;
     private String description;
     private String imageUrl;
     private LocalDateTime createdAt;
@@ -19,7 +19,7 @@ public class CategoryResponse {
     public static CategoryResponse of(CategoryDto dto) {
         return CategoryResponse.builder()
                 .id(dto.getId())
-                .categoryName(dto.getName())
+                .name(dto.getName())
                 .imageUrl(dto.getImageUrl())
                 .createdAt(dto.getCreatedAt())
                 .build();
