@@ -19,7 +19,7 @@ public class CategoryController {
 
     private final CategoryService categoryService;
 
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<ApiResponse> createCategory(@RequestBody CategoryCreateRequest request) {
 
         categoryService.create(
