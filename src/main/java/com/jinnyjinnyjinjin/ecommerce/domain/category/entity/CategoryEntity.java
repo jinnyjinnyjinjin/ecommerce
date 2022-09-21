@@ -11,7 +11,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Setter
-@Table(name = "categories")
+@Table(name = "CATEGORIES")
 public class CategoryEntity {
 
     @Id

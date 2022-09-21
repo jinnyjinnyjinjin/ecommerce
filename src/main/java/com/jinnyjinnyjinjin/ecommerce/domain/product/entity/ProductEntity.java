@@ -10,7 +10,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Getter
-@Table(name = "products")
+@Table(name = "PRODUCTS")
 public class ProductEntity {
 
     @Id
