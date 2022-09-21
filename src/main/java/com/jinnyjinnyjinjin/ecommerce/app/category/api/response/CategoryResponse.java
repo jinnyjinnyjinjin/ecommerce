@@ -21,6 +21,7 @@ public class CategoryResponse {
                 .id(dto.getId())
                 .name(dto.getName())
                 .imageUrl(dto.getImageUrl())
+                .description(dto.getDescription())
                 .createdAt(dto.getCreatedAt())
                 .build();
     }

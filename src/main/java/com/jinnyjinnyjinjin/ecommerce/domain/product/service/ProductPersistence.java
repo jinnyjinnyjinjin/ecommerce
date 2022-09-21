@@ -54,10 +54,10 @@ public class ProductPersistence {
         CategoryEntity category = categoryReader.read(product.getCategoryId());
 
         productEntity.update(
-                productEntity.getName(),
-                productEntity.getImageUrl(),
-                productEntity.getPrice(),
-                productEntity.getDescription(),
+                product.getName(),
+                product.getImageUrl(),
+                product.getPrice(),
+                product.getDescription(),
                 category
         );
     }

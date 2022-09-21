@@ -20,6 +20,7 @@ public class CategoryDto {
         return CategoryDto.builder()
                 .id(category.getId())
                 .name(category.getName())
+                .description(category.getDescription())
                 .imageUrl(category.getImageUrl())
                 .createdAt(category.getCreatedAt())
                 .build();
