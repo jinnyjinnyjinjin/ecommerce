@@ -1,6 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.app.category.dto;
 
-import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.dto.Category;
 import lombok.Builder;
 import lombok.Getter;
 

@@ -2,6 +2,7 @@ package com.jinnyjinnyjinjin.ecommerce.app.category.service;
 
 import com.jinnyjinnyjinjin.ecommerce.app.category.api.response.CategoryResponse;
 import com.jinnyjinnyjinjin.ecommerce.app.category.dto.CategoryDto;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.dto.Category;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.service.CategoryPersistence;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,8 @@ public class CategoryService {
     }
 
     public CategoryResponse getOne(Long id) {
-        CategoryDto categoryDto = categoryPersistence.findById(id);
+        Category category = categoryPersistence.findById(id);
+        CategoryDto categoryDto = CategoryDto.of(category);
         return CategoryResponse.of(categoryDto);
     }
 }

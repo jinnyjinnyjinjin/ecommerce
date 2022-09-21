@@ -1,6 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.product.entity;
 
-import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.CategoryEntity;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -27,16 +27,16 @@ public class ProductEntity {
 
     @ManyToOne(fetch = LAZY, optional = false)
     @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+    private CategoryEntity category;
 
     public ProductEntity() {
     }
 
-    public ProductEntity(String name,
+    private ProductEntity(String name,
                          String imageUrl,
                          double price,
                          String description,
-                         Category category) {
+                         CategoryEntity category) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.price = price;
@@ -48,7 +48,7 @@ public class ProductEntity {
                                        String imageUrl,
                                        double price,
                                        String description,
-                                       Category category) {
+                                       CategoryEntity category) {
         return new ProductEntity(
                 name,
                 imageUrl,
@@ -62,7 +62,7 @@ public class ProductEntity {
                        String imageUrl,
                        double price,
                        String description,
-                       Category category) {
+                       CategoryEntity category) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.price = price;

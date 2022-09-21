@@ -31,6 +31,12 @@ public class ProductService {
         return products.map(ProductResponse::of);
     }
 
+    public ProductResponse getOne(Long id) {
+        Product product = productPersistence.findById(id);
+        ProductDto productDto = ProductDto.of(product);
+        return ProductResponse.of(productDto);
+    }
+
     public void update(Long id, ProductDto productDto) {
 
         Product product = Product.of(

@@ -31,6 +31,7 @@ public class ProductDto {
 
     public static ProductDto of(Product product) {
         return ProductDto.builder()
+                .id(product.getId())
                 .name(product.getName())
                 .imageUrl(product.getImageUrl())
                 .price(product.getPrice())

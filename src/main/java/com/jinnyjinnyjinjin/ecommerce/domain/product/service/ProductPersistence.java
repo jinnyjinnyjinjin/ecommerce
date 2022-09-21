@@ -1,6 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.product.service;
 
-import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.Category;
+import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.CategoryEntity;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.service.CategoryReader;
 import com.jinnyjinnyjinjin.ecommerce.domain.product.dto.Product;
 import com.jinnyjinnyjinjin.ecommerce.domain.product.entity.ProductEntity;
@@ -24,7 +24,7 @@ public class ProductPersistence {
                      String description,
                      Long categoryId) {
 
-        Category category = categoryReader.read(categoryId);
+        CategoryEntity category = categoryReader.read(categoryId);
 
         ProductEntity product =
                 ProductEntity.create(
@@ -42,11 +42,16 @@ public class ProductPersistence {
                 .map(Product::of);
     }
 
+    public Product findById(Long id) {
+        ProductEntity product = productReader.findById(id);
+        return Product.of(product);
+    }
+
     @Transactional
     public void update(Long id, Product product) {
 
         ProductEntity productEntity = productReader.findById(id);
-        Category category = categoryReader.read(product.getCategoryId());
+        CategoryEntity category = categoryReader.read(product.getCategoryId());
 
         productEntity.update(
                 productEntity.getName(),

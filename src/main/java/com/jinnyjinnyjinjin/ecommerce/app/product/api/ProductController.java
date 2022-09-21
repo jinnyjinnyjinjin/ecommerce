@@ -58,4 +58,10 @@ public class ProductController {
 
         return new ResponseEntity<>(new ApiResponse(true, "Product has been updated"), HttpStatus.OK);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<ProductResponse> findProduct(@PathVariable("id") Long id) {
+        ProductResponse response = productService.getOne(id);
+        return new ResponseEntity<>(response, HttpStatus.OK);
+    }
 }

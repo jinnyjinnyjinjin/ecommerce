@@ -16,10 +16,10 @@ public class Product {
     private Long categoryId;
 
     public static Product of(String name,
-                      String imageUrl,
-                      double price,
-                      String description,
-                      Long categoryId) {
+                             String imageUrl,
+                             double price,
+                             String description,
+                             Long categoryId) {
 
         return Product.builder()
                 .name(name)
@@ -35,6 +35,7 @@ public class Product {
         Long categoryId = entity.getCategory().getId();
 
         return Product.builder()
+                .id(entity.getId())
                 .name(entity.getName())
                 .imageUrl(entity.getImageUrl())
                 .price(entity.getPrice())

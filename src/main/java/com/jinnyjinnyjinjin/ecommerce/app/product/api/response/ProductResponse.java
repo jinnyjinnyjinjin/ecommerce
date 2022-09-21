@@ -8,6 +8,7 @@ import lombok.Getter;
 @Builder
 public class ProductResponse {
 
+    private Long id;
     private String name;
     private String imageUrl;
     private double price;
@@ -16,6 +17,7 @@ public class ProductResponse {
 
     public static ProductResponse of(ProductDto dto) {
         return ProductResponse.builder()
+                .id(dto.getId())
                 .name(dto.getName())
                 .imageUrl(dto.getImageUrl())
                 .price(dto.getPrice())
