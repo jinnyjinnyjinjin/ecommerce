@@ -3,3 +3,8 @@ server:
 spring:
   profiles:
     active: local
+
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: com.jinnyjinnyjinjin.ecommerce.domain.config.CustomPhysicalNamingStrategy
