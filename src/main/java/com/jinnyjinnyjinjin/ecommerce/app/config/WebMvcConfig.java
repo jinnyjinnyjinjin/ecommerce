@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce.config;
+package com.jinnyjinnyjinjin.ecommerce.app.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

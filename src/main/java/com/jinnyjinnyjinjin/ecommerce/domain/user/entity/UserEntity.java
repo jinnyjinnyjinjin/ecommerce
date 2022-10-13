@@ -1,6 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.user.entity;
 
-import com.jinnyjinnyjinjin.ecommerce.domain.common.DateTimeEntity;
+import com.jinnyjinnyjinjin.ecommerce.domain.DateTimeEntity;
 import lombok.Getter;
 
 import javax.persistence.Entity;

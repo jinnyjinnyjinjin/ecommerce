@@ -1,6 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.category.entity;
 
-import com.jinnyjinnyjinjin.ecommerce.domain.common.DateTimeEntity;
+import com.jinnyjinnyjinjin.ecommerce.domain.DateTimeEntity;
 import lombok.Getter;
 import lombok.Setter;
 

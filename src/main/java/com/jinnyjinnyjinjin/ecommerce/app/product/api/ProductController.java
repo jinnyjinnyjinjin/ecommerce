@@ -1,6 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.app.product.api;
 
-import com.jinnyjinnyjinjin.ecommerce.app.category.api.ApiResponse;
+import com.jinnyjinnyjinjin.ecommerce.app.ApiResponse;
 import com.jinnyjinnyjinjin.ecommerce.app.product.api.request.ProductCreateRequest;
 import com.jinnyjinnyjinjin.ecommerce.app.product.api.request.ProductUpdateRequest;
 import com.jinnyjinnyjinjin.ecommerce.app.product.api.response.ProductResponse;

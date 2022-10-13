@@ -19,4 +19,11 @@ public class User {
                 .password(password)
                 .build();
     }
+
+    public static User of(String name, String email) {
+        return User.builder()
+                .name(name)
+                .email(email)
+                .build();
+    }
 }

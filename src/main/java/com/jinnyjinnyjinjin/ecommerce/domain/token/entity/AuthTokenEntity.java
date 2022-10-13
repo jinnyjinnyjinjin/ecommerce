@@ -29,4 +29,8 @@ public class AuthTokenEntity {
         this.token = token;
         this.user = user;
     }
+
+    public boolean isCorrect(String token) {
+        return getToken().equals(token);
+    }
 }

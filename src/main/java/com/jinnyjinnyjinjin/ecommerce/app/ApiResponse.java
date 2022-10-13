@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce.app.category.api;
+package com.jinnyjinnyjinjin.ecommerce.app;
 
 import lombok.Getter;
 

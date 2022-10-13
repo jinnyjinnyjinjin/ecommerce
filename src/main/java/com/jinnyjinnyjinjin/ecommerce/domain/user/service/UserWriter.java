@@ -13,7 +13,8 @@ public class UserWriter {
 
     private final UserRepository userRepository;
 
-    public Long write(UserEntity userEntity) {
+    public Long write(String name, String email, String password) {
+        UserEntity userEntity = UserEntity.create(name, email, password);
         return userRepository.save(userEntity).getId();
     }
 }

@@ -1,5 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.app.category.api;
 
+import com.jinnyjinnyjinjin.ecommerce.app.ApiResponse;
 import com.jinnyjinnyjinjin.ecommerce.app.category.api.request.CategoryCreateRequest;
 import com.jinnyjinnyjinjin.ecommerce.app.category.api.request.CategoryUpdateRequest;
 import com.jinnyjinnyjinjin.ecommerce.app.category.api.response.CategoryResponse;
