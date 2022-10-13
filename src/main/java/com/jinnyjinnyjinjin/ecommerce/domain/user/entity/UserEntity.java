@@ -1,5 +1,6 @@
-package com.jinnyjinnyjinjin.ecommerce.domain.user;
+package com.jinnyjinnyjinjin.ecommerce.domain.user.entity;
 
+import com.jinnyjinnyjinjin.ecommerce.domain.common.DateTimeEntity;
 import lombok.Getter;
 
 import javax.persistence.Entity;
@@ -12,7 +13,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Table(name = "USERS")
-public class UserEntity {
+public class UserEntity extends DateTimeEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -24,7 +25,7 @@ public class UserEntity {
 
     private String password;
 
-    public UserEntity() {
+    protected UserEntity() {
     }
 
     private UserEntity(String name, String email, String password) {

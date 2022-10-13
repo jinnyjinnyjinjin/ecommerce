@@ -16,20 +16,6 @@ public class Category {
     private String imageUrl;
     private LocalDateTime createdAt;
 
-    public static Category of(Long id,
-                                  String name,
-                                  String description,
-                                  String imageUrl,
-                                  LocalDateTime createdAt) {
-        return Category.builder()
-                .id(id)
-                .name(name)
-                .description(description)
-                .imageUrl(imageUrl)
-                .createdAt(createdAt)
-                .build();
-    }
-
     public static Category of(CategoryEntity entity) {
         return Category.builder()
                 .id(entity.getId())

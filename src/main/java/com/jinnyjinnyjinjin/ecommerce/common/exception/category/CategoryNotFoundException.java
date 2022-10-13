@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce.exception.category;
+package com.jinnyjinnyjinjin.ecommerce.common.exception.category;
 
 public class CategoryNotFoundException extends RuntimeException {
 

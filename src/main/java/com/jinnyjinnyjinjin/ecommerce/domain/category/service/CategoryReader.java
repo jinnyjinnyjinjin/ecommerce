@@ -2,7 +2,7 @@ package com.jinnyjinnyjinjin.ecommerce.domain.category.service;
 
 import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.CategoryEntity;
 import com.jinnyjinnyjinjin.ecommerce.domain.category.repository.CategoryRepository;
-import com.jinnyjinnyjinjin.ecommerce.exception.category.CategoryNotFoundException;
+import com.jinnyjinnyjinjin.ecommerce.common.exception.category.CategoryNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;

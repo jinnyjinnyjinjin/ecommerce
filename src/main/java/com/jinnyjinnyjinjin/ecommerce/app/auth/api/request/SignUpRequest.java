@@ -1,9 +1,9 @@
-package com.jinnyjinnyjinjin.ecommerce.app.user.api.request;
+package com.jinnyjinnyjinjin.ecommerce.app.auth.api.request;
 
 import lombok.Getter;
 
 @Getter
-public class UserRegisterRequest {
+public class SignUpRequest {
     private String name;
     private String email;
     private String password;

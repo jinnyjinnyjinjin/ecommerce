@@ -1,13 +1,13 @@
 package com.jinnyjinnyjinjin.ecommerce.app.category;
 
-import com.jinnyjinnyjinjin.ecommerce.exception.category.CategoryNotFoundException;
+import com.jinnyjinnyjinjin.ecommerce.common.exception.category.CategoryNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class ExceptionControllerAdvice {
+public class CategoryExceptionAdvice {
 
     @ExceptionHandler(value = CategoryNotFoundException.class)
     public final ResponseEntity<String> handleCategoryNotFoundException(CategoryNotFoundException exception) {

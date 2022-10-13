@@ -1,10 +1,13 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.category.entity;
 
+import com.jinnyjinnyjinjin.ecommerce.domain.common.DateTimeEntity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -12,7 +15,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Getter
 @Setter
 @Table(name = "CATEGORIES")
-public class CategoryEntity {
+public class CategoryEntity extends DateTimeEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
@@ -24,9 +27,6 @@ public class CategoryEntity {
 
     private String imageUrl;
 
-    @Column(nullable = false)
-    private LocalDateTime createdAt;
-
     public CategoryEntity() {
     }
 
@@ -36,7 +36,6 @@ public class CategoryEntity {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
-        this.createdAt = LocalDateTime.now();
     }
 
     public static CategoryEntity create(String name,

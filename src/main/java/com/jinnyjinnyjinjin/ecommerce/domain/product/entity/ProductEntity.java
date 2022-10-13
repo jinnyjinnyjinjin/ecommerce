@@ -1,6 +1,7 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.product.entity;
 
 import com.jinnyjinnyjinjin.ecommerce.domain.category.entity.CategoryEntity;
+import com.jinnyjinnyjinjin.ecommerce.domain.common.DateTimeEntity;
 import lombok.Getter;
 
 import javax.persistence.*;
@@ -11,7 +12,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Entity
 @Getter
 @Table(name = "PRODUCTS")
-public class ProductEntity {
+public class ProductEntity extends DateTimeEntity {
 
     @Id
     @GeneratedValue(strategy = IDENTITY)
