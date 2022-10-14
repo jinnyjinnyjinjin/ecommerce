@@ -1,6 +1,8 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.token.service;
 
 import com.jinnyjinnyjinjin.ecommerce.common.exception.auth.InvalidPasswordException;
+import com.jinnyjinnyjinjin.ecommerce.domain.token.dto.AuthToken;
+import com.jinnyjinnyjinjin.ecommerce.domain.token.entity.AuthTokenEntity;
 import com.jinnyjinnyjinjin.ecommerce.domain.user.entity.UserEntity;
 import com.jinnyjinnyjinjin.ecommerce.domain.user.service.UserReader;
 import com.jinnyjinnyjinjin.ecommerce.domain.user.service.UserWriter;
@@ -28,10 +30,19 @@ public class AuthPersistence {
         authTokenWriter.write(token, user);
     }
 
+    public boolean exists(String token) {
+        return authTokenReader.exists(token);
+    }
+
     public String getToken(String email, String password) {
         UserEntity userEntity = userReader.read(email);
         boolean isValid = passwordEncoder.matches(password, userEntity.getPassword());
         if (!isValid) throw new InvalidPasswordException("잘못된 비밀번호 입니다.");
-        return authTokenReader.findByUserId(userEntity.getId()).getToken();
+        return authTokenReader.readByUserId(userEntity.getId()).getToken();
+    }
+
+    public AuthToken getAuthToken(String token) {
+        AuthTokenEntity tokenEntity = authTokenReader.readByToken(token);
+        return AuthToken.of(tokenEntity);
     }
 }

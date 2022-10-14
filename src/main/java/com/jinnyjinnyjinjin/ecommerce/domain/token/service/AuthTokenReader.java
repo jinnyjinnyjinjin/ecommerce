@@ -14,8 +14,17 @@ public class AuthTokenReader {
 
     private final AuthTokenRepository authTokenRepository;
 
-    public AuthTokenEntity findByUserId(Long userId) {
+    public AuthTokenEntity readByUserId(Long userId) {
         return authTokenRepository.findByUser_Id(userId)
                 .orElseThrow(() -> new AuthTokenNotFound("토큰을 찾을 수 없습니다."));
+    }
+
+    public AuthTokenEntity readByToken(String token) {
+        return authTokenRepository.findByToken(token)
+                .orElseThrow(() -> new AuthTokenNotFound("토큰을 찾을 수 없습니다."));
+    }
+
+    public boolean exists(String token) {
+        return authTokenRepository.existsByToken(token);
     }
 }

@@ -4,7 +4,7 @@ import com.jinnyjinnyjinjin.ecommerce.app.auth.api.request.SignInRequest;
 import com.jinnyjinnyjinjin.ecommerce.app.auth.api.request.SignUpRequest;
 import com.jinnyjinnyjinjin.ecommerce.app.auth.service.AuthService;
 import com.jinnyjinnyjinjin.ecommerce.app.ApiResponse;
-import com.jinnyjinnyjinjin.ecommerce.app.user.dto.SignupDto;
+import com.jinnyjinnyjinjin.ecommerce.app.auth.service.dto.SignupDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

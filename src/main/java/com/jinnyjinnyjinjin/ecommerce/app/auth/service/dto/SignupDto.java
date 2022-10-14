@@ -1,4 +1,4 @@
-package com.jinnyjinnyjinjin.ecommerce.app.user.dto;
+package com.jinnyjinnyjinjin.ecommerce.app.auth.service.dto;
 
 import lombok.Builder;
 import lombok.Getter;

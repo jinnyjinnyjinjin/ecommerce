@@ -43,14 +43,14 @@ public class ProductPersistence {
     }
 
     public Product findById(Long id) {
-        ProductEntity product = productReader.findById(id);
+        ProductEntity product = productReader.read(id);
         return Product.of(product);
     }
 
     @Transactional
     public void update(Long id, Product product) {
 
-        ProductEntity productEntity = productReader.findById(id);
+        ProductEntity productEntity = productReader.read(id);
         CategoryEntity category = categoryReader.read(product.getCategoryId());
 
         productEntity.update(

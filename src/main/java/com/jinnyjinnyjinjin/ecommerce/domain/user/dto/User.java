@@ -1,5 +1,6 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.user.dto;
 
+import com.jinnyjinnyjinjin.ecommerce.domain.user.entity.UserEntity;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -24,6 +25,13 @@ public class User {
         return User.builder()
                 .name(name)
                 .email(email)
+                .build();
+    }
+
+    public static User of(UserEntity entity) {
+        return User.builder()
+                .name(entity.getName())
+                .email(entity.getPassword())
                 .build();
     }
 }

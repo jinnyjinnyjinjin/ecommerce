@@ -20,7 +20,7 @@ public class ProductReader {
         return productRepository.findAll(pageable);
     }
 
-    public ProductEntity findById(Long id) {
+    public ProductEntity read(Long id) {
         return productRepository.findById(id)
                 .orElseThrow(() -> new ProductNotFound("상품을 찾을 수 없습니다.", id));
     }

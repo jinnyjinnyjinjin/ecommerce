@@ -1,6 +1,7 @@
 package com.jinnyjinnyjinjin.ecommerce.domain.user.service;
 
 import com.jinnyjinnyjinjin.ecommerce.domain.user.dto.User;
+import com.jinnyjinnyjinjin.ecommerce.domain.user.entity.UserEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,11 @@ public class UserPersistence {
                 user.getEmail(),
                 user.getPassword()
         );
+    }
+
+    public User get(Long id) {
+        UserEntity userEntity = userReader.read(id);
+        return User.of(userEntity);
     }
 
     public boolean existEmail(String email) {
