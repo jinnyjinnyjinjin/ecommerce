@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 @Component
 @RequiredArgsConstructor
 public class CategoryPersistence {
@@ -18,7 +20,7 @@ public class CategoryPersistence {
         List<CategoryEntity> categories = categoryReader.readAll();
         return categories.stream()
                 .map(Category::of)
-                .toList();
+                .collect(toList());
     }
 
     public void save(String name, String description, String imageUrl) {

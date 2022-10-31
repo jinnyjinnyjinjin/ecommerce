@@ -30,8 +30,9 @@ public class User {
 
     public static User of(UserEntity entity) {
         return User.builder()
+                .id(entity.getId())
                 .name(entity.getName())
-                .email(entity.getPassword())
+                .email(entity.getEmail())
                 .build();
     }
 }

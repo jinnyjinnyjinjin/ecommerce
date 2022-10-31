@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 @Service
 @RequiredArgsConstructor
 public class CategoryService {
@@ -22,10 +24,10 @@ public class CategoryService {
     public List<CategoryResponse> getAll() {
         List<CategoryDto> categoryDtos = categoryPersistence.findAll().stream()
                 .map(CategoryDto::of)
-                .toList();
+                .collect(toList());
         return categoryDtos.stream()
                 .map(CategoryResponse::of)
-                .toList();
+                .collect(toList());
     }
 
     public void update(Long id, String name, String description, String imageUrl) {
